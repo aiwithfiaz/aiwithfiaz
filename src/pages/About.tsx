@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Bot, Code, Brain, Rocket, Target, Eye, Heart, Shield, Sparkles } from 'lucide-react'
+import { Rocket, Target, Heart, Shield, Sparkles } from 'lucide-react'
 
 const values = [
   { icon: Sparkles, title: 'Innovation', description: 'Pushing boundaries with cutting-edge AI technology' },

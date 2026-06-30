@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { ArrowLeft, Calendar, User, Clock, Tag, Share2 } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, Tag, Share2 } from 'lucide-react'
 import { formatDate } from '@/lib/utils'
 
 const posts = [

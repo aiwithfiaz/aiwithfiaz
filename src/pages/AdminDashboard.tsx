@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { Users, FileText, MessageSquare, Mail, TrendingUp, Eye, BarChart3, Settings, Plus, MoreHorizontal } from 'lucide-react'
+import { Users, FileText, MessageSquare, TrendingUp, Eye, BarChart3, Settings, Plus, MoreHorizontal } from 'lucide-react'
 
 const stats = [
   { label: 'Total Visitors', value: '12,847', change: '+12%', icon: Eye },
