@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Bot, Code, Brain, Cpu, Workflow, Building2, BarChart3, Globe, Database, Cloud, Shield, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { SubscriptionPlans } from '@/features/payments/SubscriptionPlans'
 
 const serviceDetails = [
@@ -170,7 +170,7 @@ export default function Services() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Let's discuss how we can help you leverage AI and modern technology for your business.
             </p>
-            <Link to="/quote">
+            <Link href="/quote">
               <Button variant="gradient" size="xl">
                 Get Free Consultation
               </Button>

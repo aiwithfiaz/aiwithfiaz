@@ -1,5 +1,8 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Bot, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -12,10 +15,10 @@ const navLinks = [
     label: 'Services',
     path: '/services',
     dropdown: [
-      { label: 'AI Automation', path: '/services#ai-automation' },
-      { label: 'Web Development', path: '/services#web-development' },
-      { label: 'AI Integration', path: '/services#ai-integration' },
-      { label: 'AI Consulting', path: '/services#ai-consulting' },
+      { label: 'AI Automation', path: '/ai-automation' },
+      { label: 'Web Development', path: '/web-development' },
+      { label: 'AI Integration', path: '/ai-integration' },
+      { label: 'AI Consulting', path: '/ai-consulting' },
     ],
   },
   { label: 'Portfolio', path: '/portfolio' },
@@ -29,7 +32,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const location = useLocation()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -40,7 +43,7 @@ export function Navbar() {
   useEffect(() => {
     setIsOpen(false)
     setActiveDropdown(null)
-  }, [location])
+  }, [pathname])
 
   return (
     <nav
@@ -53,7 +56,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <Bot className="w-8 h-8 text-primary group-hover:animate-spin" />
             <span className="text-xl font-bold gradient-text">AIwithFiaz</span>
           </Link>
@@ -67,10 +70,10 @@ export function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <Link
-                  to={link.path}
+                  href={link.path}
                   className={cn(
                     'px-4 py-2 rounded-lg text-sm font-medium transition-colors hover:text-primary flex items-center gap-1',
-                    location.pathname === link.path
+                    pathname === link.path
                       ? 'text-primary bg-primary/10'
                       : 'text-muted-foreground'
                   )}
@@ -88,7 +91,7 @@ export function Navbar() {
                     {link.dropdown.map((item) => (
                       <Link
                         key={item.label}
-                        to={item.path}
+                        href={item.path}
                         className="block px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
                       >
                         {item.label}
@@ -102,7 +105,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <Link to="/quote" className="hidden lg:block">
+            <Link href="/quote" className="hidden lg:block">
               <Button variant="gradient" size="sm">
                 Get Free Consultation
               </Button>
@@ -131,10 +134,10 @@ export function Navbar() {
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
-                  to={link.path}
+                  href={link.path}
                   className={cn(
                     'block px-4 py-3 rounded-lg text-sm font-medium transition-colors',
-                    location.pathname === link.path
+                    pathname === link.path
                       ? 'text-primary bg-primary/10'
                       : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
                   )}
@@ -142,7 +145,7 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/quote" className="block mt-4">
+              <Link href="/quote" className="block mt-4">
                 <Button variant="gradient" className="w-full">
                   Get Free Consultation
                 </Button>

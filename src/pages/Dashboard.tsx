@@ -1,12 +1,11 @@
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import {
-  User, FileText, MessageSquare, CreditCard, Download,
-  BarChart3, Settings, Bell, LogOut, Activity, FolderOpen,
+  FileText, MessageSquare, CreditCard, Download,
+  BarChart3, Settings, LogOut, Activity, FolderOpen,
   ChevronRight
 } from 'lucide-react'
 

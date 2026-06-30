@@ -1,4 +1,7 @@
-import { useParams, Link } from 'react-router-dom'
+'use client'
+
+import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -39,7 +42,7 @@ export default function BlogPost() {
     return (
       <div className="pt-24 py-20 text-center">
         <h1 className="text-2xl font-bold mb-4">Post Not Found</h1>
-        <Link to="/blog"><Button variant="outline">Back to Blog</Button></Link>
+        <Link href="/blog"><Button variant="outline">Back to Blog</Button></Link>
       </div>
     )
   }
@@ -49,7 +52,7 @@ export default function BlogPost() {
       <article className="py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
               <ArrowLeft className="w-4 h-4" /> Back to Blog
             </Link>
 

@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Bot, Code2, MessageCircle, Users, Mail, Phone, MapPin } from 'lucide-react'
 import { NewsletterForm } from '@/features/newsletter/NewsletterForm'
 
 const footerLinks = {
   services: [
-    { label: 'AI Automation', path: '/services#ai-automation' },
-    { label: 'Web Development', path: '/services#web-development' },
-    { label: 'AI Integration', path: '/services#ai-integration' },
-    { label: 'AI Consulting', path: '/services#ai-consulting' },
+    { label: 'AI Automation', path: '/ai-automation' },
+    { label: 'Web Development', path: '/web-development' },
+    { label: 'AI Integration', path: '/ai-integration' },
+    { label: 'AI Consulting', path: '/ai-consulting' },
   ],
   company: [
     { label: 'About', path: '/about' },
@@ -17,10 +17,12 @@ const footerLinks = {
     { label: 'Contact', path: '/contact' },
   ],
   support: [
-    { label: 'Privacy Policy', path: '/privacy' },
-    { label: 'Terms of Service', path: '/terms' },
-    { label: 'FAQ', path: '/faq' },
-    { label: 'Support', path: '/contact' },
+    { label: 'Privacy Policy', path: '/legal/privacy' },
+    { label: 'Terms of Service', path: '/legal/terms' },
+    { label: 'Cookie Policy', path: '/legal/cookies' },
+    { label: 'Acceptable Use', path: '/legal/acceptable-use' },
+    { label: 'Data Processing', path: '/legal/dpa' },
+    { label: 'Refund Policy', path: '/legal/refund' },
   ],
 }
 
@@ -30,7 +32,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <Bot className="w-8 h-8 text-primary" />
               <span className="text-xl font-bold gradient-text">AIwithFiaz</span>
             </Link>
@@ -69,7 +71,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -82,7 +84,7 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -104,8 +106,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} AIwithFiaz. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
-            <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+            <Link href="/legal/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+            <Link href="/legal/terms" className="hover:text-primary transition-colors">Terms</Link>
           </div>
         </div>
       </div>

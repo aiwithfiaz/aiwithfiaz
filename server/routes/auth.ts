@@ -8,10 +8,10 @@ router.post('/register', async (req, res) => {
   try {
     const { name: _name, email: _email, password } = req.body
     // Hash password and create user
-    const hashedPassword = await bcrypt.hash(password, 10)
+    const _hashedPassword = await bcrypt.hash(password, 10)
     // Save to database
     res.status(201).json({ message: 'User created successfully' })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Registration failed' })
   }
 })
@@ -23,7 +23,7 @@ router.post('/login', async (req, res) => {
     // Generate JWT
     const token = jwt.sign({ email, role: 'user' }, process.env.JWT_SECRET!, { expiresIn: '7d' })
     res.json({ token, user: { email } })
-  } catch (_error) {
+  } catch {
     res.status(401).json({ error: 'Invalid credentials' })
   }
 })

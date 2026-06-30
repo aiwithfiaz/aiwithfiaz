@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, BarChart3, Clock, DollarSign, TrendingUp } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const caseStudies = [
   {
@@ -95,7 +95,7 @@ export default function CaseStudies() {
                         ))}
                       </div>
 
-                      <Link to="/quote">
+                      <Link href="/quote">
                         <Button variant="gradient">
                           Get Similar Results <ArrowRight className="w-4 h-4 ml-2" />
                         </Button>

@@ -6,7 +6,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all blog posts
     res.json({ posts: [] })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to fetch posts' })
   }
 })
@@ -15,7 +15,7 @@ router.get('/:slug', async (req, res) => {
   try {
     // Get single post by slug
     res.json({ post: null })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to fetch post' })
   }
 })
@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
     const { title: _title, content: _content, category: _category, tags: _tags } = req.body
     // Create blog post
     res.status(201).json({ message: 'Post created' })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to create post' })
   }
 })

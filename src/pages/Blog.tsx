@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -141,7 +143,7 @@ export default function Blog() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
               >
-                <Link to={`/blog/${post.slug}`}>
+                <Link href={`/blog/${post.slug}`}>
                   <Card className="group h-full hover:shadow-lg transition-shadow">
                     <div className="h-48 bg-gradient-to-br from-primary/10 via-purple-500/10 to-accent/10 flex items-center justify-center">
                       <Calendar className="w-12 h-12 text-primary/30" />

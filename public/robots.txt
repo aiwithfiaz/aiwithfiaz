@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /register/
+Disallow: /quote/
 Sitemap: https://aiwithfiaz.com/sitemap.xml
+
+# Crawl delay for good bots
+Crawl-delay: 1

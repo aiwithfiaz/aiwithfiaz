@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Bot, Code, Brain, ArrowRight } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -78,7 +78,7 @@ export function Services() {
                       </li>
                     ))}
                   </ul>
-                  <Link to={service.path}>
+                  <Link href={service.path}>
                     <Button variant="ghost" className="group p-0 hover:bg-transparent">
                       Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>

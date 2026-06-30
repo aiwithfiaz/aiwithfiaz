@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Play, Shield, Zap, TrendingUp } from 'lucide-react'
@@ -46,13 +46,13 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
-              <Link to="/quote">
+              <Link href="/quote">
                 <Button variant="gradient" size="xl" className="group">
                   Get Free Consultation
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link to="/portfolio">
+              <Link href="/portfolio">
                 <Button variant="outline" size="xl">
                   <Play className="w-5 h-5 mr-2" />
                   View Portfolio

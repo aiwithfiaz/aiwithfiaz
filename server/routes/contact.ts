@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     // Save to database
     // Send email notification
     res.status(200).json({ message: 'Message sent successfully' })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to send message' })
   }
 })
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all contact requests
     res.json({ contacts: [] })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to fetch contacts' })
   }
 })

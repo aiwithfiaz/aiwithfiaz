@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     // Save to database
     // Send email confirmation
     res.status(201).json({ quoteId, message: 'Quote request submitted' })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to submit quote request' })
   }
 })
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
   try {
     // Get all quote requests
     res.json({ quotes: [] })
-  } catch (_error) {
+  } catch {
     res.status(500).json({ error: 'Failed to fetch quotes' })
   }
 })
