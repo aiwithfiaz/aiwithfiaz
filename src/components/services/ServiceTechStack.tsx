@@ -39,7 +39,13 @@ export function ServiceTechStack({ categories, title = 'Technology Stack', subti
               transition={{ delay: catIndex * 0.1 }}
             >
               <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
-                <cat.icon className={`w-6 h-6 ${cat.color}`} />
+                {typeof cat.icon === 'string' ? (
+                  <span className="text-2xl">{cat.icon}</span>
+                ) : typeof cat.icon === 'function' ? (
+                  <cat.icon className={`w-6 h-6 ${cat.color}`} />
+                ) : (
+                  <span className={`flex ${cat.color}`}>{cat.icon}</span>
+                )}
                 <span className="text-foreground">{cat.category}</span>
               </h3>
               

@@ -35,7 +35,8 @@ const posts = [
 ]
 
 export default function BlogPost() {
-  const { slug } = useParams()
+  const params = useParams()
+  const slug = params?.slug
   const post = posts.find(p => p.slug === slug)
 
   if (!post) {
